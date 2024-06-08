@@ -14,6 +14,12 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 
 const Survey = () => {
@@ -121,7 +127,7 @@ const Survey = () => {
         <h3 className="mb-4 text-center text-2xl font-bold sm:text-4xl">
           CariDent AI Medix Survey
         </h3>
-        <p className="mb-6 max-w-3xl text-justify sm:text-lg">
+        <p className="mb-6 max-w-3xl p-2 text-justify sm:text-lg">
           &emsp;&emsp;Hi! We are currently conducting research for our thesis
           titled:&nbsp;
           <b className="text-cyan-500">
@@ -173,6 +179,39 @@ const Survey = () => {
                   Loading…
                 </iframe>
               </div>
+            </CardContent>
+            <CardFooter>
+              <p>Please answer our survey below afterwards.</p>
+            </CardFooter>
+          </Card>
+        </div>
+        <div className="mb-6 w-full">
+          <Card className="h-full w-full">
+            <CardHeader>
+              <CardTitle>Try out our app for yourself!</CardTitle>
+              <CardDescription>
+                You need expo go to run the app. Scan the QR code below to try.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ol className="list-decimal space-y-2 pl-4 pt-2">
+                <li>
+                  <div>Install the Expo Go app on your device.</div>
+                </li>
+                <Button asChild>
+                  <a href="https://expo.dev/go">Install Expo Go</a>
+                </Button>
+                <Accordion type="single" collapsible defaultValue="item-1">
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>
+                      <li>Scan the QR Code</li>
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <img className="rounded-xl" src="/src/assets/app.png" />
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </ol>
             </CardContent>
             <CardFooter>
               <p>Please answer our survey below afterwards.</p>
