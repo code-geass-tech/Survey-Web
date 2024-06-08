@@ -59,7 +59,7 @@ const Survey = () => {
                 </Button>
               </CollapsibleTrigger>
               <Button variant="link" asChild>
-                <a href={getFormLink()}>Open form in new tab</a>
+                <a href={getFormLink()} target="_blank" rel="noreferrer">Open form in new tab</a>
               </Button>
             </div>
             <CollapsibleContent>
