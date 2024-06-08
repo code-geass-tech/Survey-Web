@@ -199,7 +199,7 @@ const Survey = () => {
                   <div>Install the Expo Go app on your device.</div>
                 </li>
                 <Button asChild>
-                  <a href="https://expo.dev/go">Install Expo Go</a>
+                  <a href="https://expo.dev/go" target="_blank" rel="noreferrer">Install Expo Go</a>
                 </Button>
                 <Accordion type="single" collapsible defaultValue="item-1">
                   <AccordionItem value="item-1">
