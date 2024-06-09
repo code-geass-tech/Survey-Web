@@ -33,7 +33,7 @@ const Survey = () => {
 
   const renderFormTab = () => {
     return (
-      <Card>
+      <Card className="mt-4">
         <CardHeader>
           <CardTitle>{`Survey for ${tabTitles[activeTab]}`}</CardTitle>
           <CardDescription>
@@ -104,41 +104,42 @@ const Survey = () => {
 
   return (
     <div className="flex justify-center p-4 text-zinc-950 dark:text-zinc-50">
-      <div className="flex max-w-fit flex-col items-center">
-        <h3 className="mb-4 text-center text-2xl font-bold sm:text-4xl">
+      <div className="flex max-w-4xl flex-col items-start space-y-6">
+        <h3 className="text-center text-3xl font-bold sm:text-5xl">
           CariDent AI Medix Survey
         </h3>
-        <p className="mb-6 max-w-4xl p-2 text-justify sm:text-lg">
-          &emsp;&emsp;We are currently conducting research for our thesis
-          titled:&nbsp;
+        <p className="leading-loose sm:text-lg">
+          Hi there! 👋
+          <br />
+          <br />
+          We are currently conducting research for our thesis titled:&nbsp;
           <b className="text-cyan-500">
             "CariDent AI Medix: A Convolutional Neural Network for Precise
             Identification of Dental Caries."
           </b>
           <br />
           <br />
-          &emsp;&emsp; We are in need of{" "}
-          <b>
-            CS professionals, IT experts, students, and licensed dentists.
+          <b>What is CariDent AI Medix? 🤖🦷</b>
+          <br />
+          It's a groundbreaking mobile application designed to detect dental
+          cavities early,{" "}
+          <b className="text-cyan-500">
+            even when there are no obvious signs.
           </b>{" "}
-          We highly value your insights and opinions for our study. We have
-          developed a mobile application designed to detect dental cavities
-          early, even when there are no obvious signs. Using advanced AI, our
-          app analyzes dental images and identifies potential cavities with high
-          precision.
+          Our app uses advanced AI to analyze dental images and identify
+          potential cavities with high precision.
           <br />
           <br />
-          &emsp;&emsp; While the app is still in development, the video
-          effectively showcases its core functionalities. By participating,
-          you'll get an exclusive look at our cutting-edge technology, and your
-          feedback will play a crucial role in refining our application and
-          advancing dental cavity detection technologies.
+          To perfect our research, we need insights from individuals like you!
+          Whether you're a <b>student</b>, a professional in{" "}
+          <b>Computer Science (CS) or Information Technology (IT)</b>, or a{" "}
+          <b>licensed dentist</b>, your feedback is invaluable to us.
           <br />
           <br />
-          <b>Why Participate?</b>
+          <b>Why Participate? 🌟</b>
           <ul className="ml-6 list-disc">
             <li>
-              <b>✨ Be Part of Innovation:</b> Experience firsthand the power of
+              <b>🚀 Be Part of Innovation:</b> Experience firsthand the power of
               AI in revolutionizing dental health.
             </li>
             <li>
@@ -155,17 +156,13 @@ const Survey = () => {
             </li>
           </ul>
           <br />
-          <b>How to Help?</b>
+          <b>How to Help?️</b>
           <ol className="ml-6 list-decimal">
+            <li>🎥 Watch the Video: See our AI in action.</li>
+            <li>📝 Provide Feedback: Share your valuable opinions.</li>
             <li>
-              🎥 <b>Watch the Video:</b> See our AI in action.
-            </li>
-            <li>
-              📱 <b>Explore the App:</b> Try it yourself and experience our
-              innovative image scanning and analysis feature.
-            </li>
-            <li>
-              📝 <b>Provide Feedback:</b> Share your valuable opinions.
+              📱 Explore the App: Experience our innovative image scanning and
+              analysis feature.
             </li>
           </ol>
           <br />
@@ -177,10 +174,12 @@ const Survey = () => {
           <b className="text-cyan-500">Code Geass</b>
         </p>
 
-        <div className="mb-6 w-full">
-          <Card className="h-full w-full">
+        <div className="w-full">
+          <Card className="w-full">
             <CardHeader>
-              <CardTitle>System demonstration</CardTitle>
+              <CardTitle className="text-xl font-semibold">
+                System demonstration
+              </CardTitle>
               <CardDescription>
                 A short demonstration of how the system works
               </CardDescription>
@@ -204,12 +203,15 @@ const Survey = () => {
             </CardFooter>
           </Card>
         </div>
-        <div className="mb-6 w-full">
-          <Card className="h-full w-full">
+
+        <div className="w-full">
+          <Card className="w-full">
             <CardHeader>
-              <CardTitle>Try out our app for yourself!</CardTitle>
+              <CardTitle className="text-xl font-semibold">
+                Try out our app for yourself!
+              </CardTitle>
               <CardDescription>
-                You need expo go to run the app. Scan the QR code below to try.
+                You need Expo Go to run the app. Scan the QR code below to try.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -243,8 +245,9 @@ const Survey = () => {
             </CardFooter>
           </Card>
         </div>
-        <Tabs defaultValue="students" className="w-full">
-          <TabsList className="grid h-auto w-full grid-cols-3">
+
+        <Tabs defaultValue="students" className="mt-8 w-full">
+          <TabsList className="mb-4 grid h-auto w-full grid-cols-3">
             <TabsTrigger
               className="p-3 font-bold"
               value="students"
