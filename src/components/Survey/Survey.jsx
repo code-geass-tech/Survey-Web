@@ -25,12 +25,17 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 const Survey = () => {
   const [activeTab, setActiveTab] = useState("students");
   const [isOpen, setIsOpen] = useState(true);
+  const tabTitles = {
+    students: "Students",
+    "cs-experts": "CS/IT Experts",
+    dentists: "Dentists",
+  };
 
   const renderFormTab = () => {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Survey form</CardTitle>
+          <CardTitle>{`Survey for ${tabTitles[activeTab]}`}</CardTitle>
           <CardDescription>
             Please select the relevant form to you and answer it below.
           </CardDescription>
@@ -46,12 +51,12 @@ const Survey = () => {
                 <Button variant="" size="sm" className="space-x-2 p-0 px-2">
                   {isOpen ? (
                     <>
-                      <p>Hide form</p>
+                      <p>Hide Form</p>
                       <FaChevronUp />
                     </>
                   ) : (
                     <>
-                      <p>Show form</p>
+                      <p>Show Form</p>
                       <FaChevronDown />
                     </>
                   )}
@@ -59,7 +64,9 @@ const Survey = () => {
                 </Button>
               </CollapsibleTrigger>
               <Button variant="link" asChild>
-                <a href={getFormLink()} target="_blank" rel="noreferrer">Open form in new tab</a>
+                <a href={getFormLink()} target="_blank" rel="noreferrer">
+                  Open Form in New Tab
+                </a>
               </Button>
             </div>
             <CollapsibleContent>
@@ -88,37 +95,11 @@ const Survey = () => {
   };
 
   const renderForm = () => {
-    if (activeTab === "students") {
-      return (
-        <iframe
-          src={`${getFormLink()}?embedded=true`}
-          width="100%"
-          height="100%"
-        >
-          Loading…
-        </iframe>
-      );
-    } else if (activeTab === "cs-experts") {
-      return (
-        <iframe
-          src={`${getFormLink()}?embedded=true`}
-          width="100%"
-          height="100%"
-        >
-          Loading…
-        </iframe>
-      );
-    } else if (activeTab === "dentists") {
-      return (
-        <iframe
-          src={`${getFormLink()}?embedded=true`}
-          width="100%"
-          height="100%"
-        >
-          Loading…
-        </iframe>
-      );
-    }
+    return (
+      <iframe src={`${getFormLink()}?embedded=true`} width="100%" height="100%">
+        Loading…
+      </iframe>
+    );
   };
 
   return (
@@ -127,8 +108,8 @@ const Survey = () => {
         <h3 className="mb-4 text-center text-2xl font-bold sm:text-4xl">
           CariDent AI Medix Survey
         </h3>
-        <p className="mb-6 max-w-3xl p-2 text-justify sm:text-lg">
-          &emsp;&emsp;Hi! We are currently conducting research for our thesis
+        <p className="mb-6 max-w-4xl p-2 text-justify sm:text-lg">
+          &emsp;&emsp;We are currently conducting research for our thesis
           titled:&nbsp;
           <b className="text-cyan-500">
             "CariDent AI Medix: A Convolutional Neural Network for Precise
@@ -137,27 +118,65 @@ const Survey = () => {
           <br />
           <br />
           &emsp;&emsp; We are in need of{" "}
-          <b>CS professionals, IT experts, and dentists.</b> We highly value
-          your insights and opinions for our study. We have developed a mobile
-          application and created a video demonstration of its main features.
-          While the app is still in development, the video effectively showcases
-          its core functionalities. We would greatly appreciate your
-          participation in our software evaluation.
+          <b>
+            CS professionals, IT experts, students, and licensed dentists.
+          </b>{" "}
+          We highly value your insights and opinions for our study. We have
+          developed a mobile application designed to detect dental cavities
+          early, even when there are no obvious signs. Using advanced AI, our
+          app analyzes dental images and identifies potential cavities with high
+          precision.
           <br />
           <br />
-          &emsp;&emsp;We kindly ask you to spare us 5-10 minutes of your time to
-          watch the video and provide your feedback. Your contributions will
-          significantly aid us in refining our application and advancing dental
-          caries detection technologies.
+          &emsp;&emsp; While the app is still in development, the video
+          effectively showcases its core functionalities. By participating,
+          you'll get an exclusive look at our cutting-edge technology, and your
+          feedback will play a crucial role in refining our application and
+          advancing dental cavity detection technologies.
           <br />
           <br />
-          &emsp;&emsp;Thank you very much for your time and consideration.
+          <b>Why Participate?</b>
+          <ul className="ml-6 list-disc">
+            <li>
+              <b>✨ Be Part of Innovation:</b> Experience firsthand the power of
+              AI in revolutionizing dental health.
+            </li>
+            <li>
+              <b>🦷 Enhance Dental Care:</b> Contribute to a tool that could
+              make early detection of cavities accessible to everyone.
+            </li>
+            <li>
+              <b>📚 Boost Your Expertise:</b> Gain insights into cutting-edge
+              technology and its practical applications in healthcare.
+            </li>
+            <li>
+              <b>🌍 Make a Difference:</b> Your feedback will directly influence
+              the development and effectiveness of this technology.
+            </li>
+          </ul>
+          <br />
+          <b>How to Help?</b>
+          <ol className="ml-6 list-decimal">
+            <li>
+              🎥 <b>Watch the Video:</b> See our AI in action.
+            </li>
+            <li>
+              📱 <b>Explore the App:</b> Try it yourself and experience our
+              innovative image scanning and analysis feature.
+            </li>
+            <li>
+              📝 <b>Provide Feedback:</b> Share your valuable opinions.
+            </li>
+          </ol>
+          <br />
+          Thank you very much for your time and consideration.
           <br />
           <br />
           Best regards,
           <br />
           <b className="text-cyan-500">Code Geass</b>
         </p>
+
         <div className="mb-6 w-full">
           <Card className="h-full w-full">
             <CardHeader>
@@ -199,7 +218,13 @@ const Survey = () => {
                   <div>Install the Expo Go app on your device.</div>
                 </li>
                 <Button asChild>
-                  <a href="https://expo.dev/go" target="_blank" rel="noreferrer">Install Expo Go</a>
+                  <a
+                    href="https://expo.dev/go"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Install Expo Go
+                  </a>
                 </Button>
                 <Accordion type="single" collapsible defaultValue="item-1">
                   <AccordionItem value="item-1">
@@ -219,20 +244,23 @@ const Survey = () => {
           </Card>
         </div>
         <Tabs defaultValue="students" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid h-auto w-full grid-cols-3">
             <TabsTrigger
+              className="p-3 font-bold"
               value="students"
               onClick={() => setActiveTab("students")}
             >
               Students
             </TabsTrigger>
             <TabsTrigger
+              className="p-3 font-bold"
               value="cs-experts"
               onClick={() => setActiveTab("cs-experts")}
             >
               CS/IT Experts
             </TabsTrigger>
             <TabsTrigger
+              className="p-3 font-bold"
               value="dentists"
               onClick={() => setActiveTab("dentists")}
             >
